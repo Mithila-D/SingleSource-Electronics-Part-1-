@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Single Source Electronics - Products & Services</title>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/product&services2.css"/>
+
+</head>
+<body>
+ <!-- Dynamic Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Products</h1>
+      <p>Our engineering services are designed to support every phase of the product lifecycle, from initial concept to production and beyond. We work closely with our clients to understand their unique needs and challenges, offering flexible, scalable solutions that deliver results.</p>
+    </div>
+  </section>
+
+  <!-- Divider line -->
+<div style="
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #ffd6b9, #b46767, red,rgb(105, 3, 3));
+  box-shadow: 0 0 8px rgba(249, 114, 18, 0.5);
+  border-radius: 3px;
+  margin: 40px 0;
+"></div>
+
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <div class="row">
+    <!-- Centered Product Options -->
+        <div class="col-12">
+            <h3 class="our-products-title text-center mb-5">Our Products</h3>
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4">
+                <div class="product-card text-center py-4 px-5" data-product="resistive-load-box">
+                    <i class="fas fa-microchip fa-2x mb-2"></i>
+                    <h5 class="mb-0">Resistive Load Box</h5>
+                    </div>
+                    <div class="product-card text-center py-4 px-5" data-product="eol">
+                    <i class="fas fa-tools fa-2x mb-2"></i>
+                    <h5 class="mb-0">EOL</h5>
+                    </div>
+                    <div class="product-card text-center py-4 px-5" data-product="ecu-load-box">
+                    <i class="fas fa-car fa-2x mb-2"></i>
+                    <h5 class="mb-0">ECU Load Box</h5>
+                </div>
+        </div>
+        </div>
+
+    </div>
+        
+
+      </div>
+    </div>
+  </section>
+<footer class="footer">
+    <div class="container">
+      <p>Copyright © 2025 Singlesource Electronics </p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/load_navbar.js"></script>
+
+  <script>
+    // Sidebar item click highlight and navigation
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      item.addEventListener('click', function() {
+        // Remove active class from all items
+        document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+        
+        // Add active class to clicked item
+        this.classList.add('active');
+        
+        // Get the product type from data attribute
+        const productType = this.getAttribute('data-product');
+        
+
+      });
+    });
+
+    // Add smooth scrolling and enhanced interactivity
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add entrance animation to sidebar items
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      sidebarItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+      });
+    });
+
+
+  // Product card click navigation to with_imageAndCard.html with correct model
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const product = this.getAttribute('data-product');
+      let modelNum = 1;
+      if (product === 'resistive-load-box') modelNum = 1;
+      else if (product === 'eol') modelNum = 2;
+      else if (product === 'ecu-load-box') modelNum = 3;
+      window.location.href = `submodels.html?model=${modelNum}`;
+    });
+  });
+  </script>
+
+</body>
+</html>

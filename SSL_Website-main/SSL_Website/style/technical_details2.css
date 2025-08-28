@@ -1,0 +1,243 @@
+:root {
+  --bg-color: #ff6a00;
+  --bg-color-hover: #ffcc00;
+  --text-color: #ffffff;
+  --main-red: #d90429;
+  --pink-red: #ff4d6d;
+  --darker-red: #9b0f19;
+  --light-grey: #fafafa;
+  --medium-grey: #d3d3d3;
+  --dark-grey: #2b2b2b;
+  --white: #ffffff;
+  --text-black: #000000;
+  --light-blue: #cde6ff;
+  --light-peach: #ffe6e1;
+  --slight-orange-red: rgb(255, 64, 30);
+  --pink-shade1: #ff7272;
+  --brown-shade1: rgb(78, 2, 2);
+  --orange-shade1: #f97212;
+  --pink-shade2: #d70068;
+  --nav-height: 70px;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: whitesmoke;
+  color: black;
+  font-family: Segoe UI, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: var(--nav-height);
+  top: 0px;
+  background: linear-gradient(to right, #f97212, #d70068, rgb(141, 4, 4));
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  transition: background 0.3s;
+  border-bottom: 2px solid var(--bg-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: gradientBG 8s ease infinite;
+  background-size: 400% 400%;
+}
+#navbar-placeholder {
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding-left: 20px;
+}
+@media (max-width: 1200px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    background: #ff6a00;
+    border-radius: 0 0 15px 15px;
+    padding: 20px 0;
+    box-shadow: 0 8px 25px rgba(255, 106, 0, 0.4);
+    height: auto;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 5px 0;
+    line-height: normal;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    color: white;
+    display: block;
+    padding: 15px 20px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .nav-links a::before {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+.nav-links.active {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main-box {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 2px 2px 6px rgba(148, 16, 16, 0.498);
+  background: linear-gradient(
+    45deg,
+    var(--darker-red),
+    var(--bg-color),
+    red,
+    rgb(255, 255, 0),
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.box-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.centered-box {
+  display: flex;
+  justify-content: center;
+}
+
+.content-box {
+  border: 2px solid red;
+  border-radius: 0px 80px;
+  box-shadow: 0 0 10px rgba(101, 101, 101, 0.5);
+  padding: 20px;
+  background: linear-gradient(205deg, white, green);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+  color: #fafafa;
+  font-weight: 500;
+
+  text-shadow: 2px 2px 30px rgba(220, 196, 196, 0.922);
+  background: linear-gradient(
+    45deg,
+    black,
+    black,
+    var(--slight-orange-red),
+    rgb(255, 255, 162)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+.content-box:hover {
+  transform: translateY(-10px);
+}
+
+.images {
+  float: right;
+  margin-left: 15px;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px 15px;
+}
+
+h3 {
+  margin-top: 0;
+  color: gold;
+}
+
+ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.subpoint {
+  font-weight: 100;
+  font-size: 10px;
+  color: goldenrod;
+}
+
+@media (max-width: 768px) {
+  .box-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
